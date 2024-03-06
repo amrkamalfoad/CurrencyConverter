@@ -216,12 +216,15 @@ header span:hover i{
     background-size: cover;
     z-index: -1;
 }
-.mid-container h2,
-.mid-container p{
+.mid-container .slogan-cont{
+    margin: auto;
+    width: 70%;
+}
+.mid-container .slogan-cont h2,
+.mid-container .slogan-cont p{
     color: white;
+    letter-spacing: 1px;
     text-align: center;
-    margin-top: 20px;
-    letter-spacing: 2px;
 }
 .mid-container .converter-div{
     background-color: white;
@@ -247,6 +250,9 @@ header span:hover i{
     align-items: center;
     transition: 0.3s;
 }
+.mid-container .converter-div ul li i{
+    margin-right: 10px;
+}
 .mid-container .converter-div ul li:first-of-type{
     border-radius: 7px 0px 0px 0px;
 }
@@ -259,7 +265,7 @@ header span:hover i{
     cursor: pointer;
 }
 .mid-container .converter-div ul li.active{
-    background-color: #3d6cb9;
+    background-color: #3378e7;
     color: white;
     opacity: 0.8;
 }
@@ -299,6 +305,9 @@ header span:hover i{
     cursor: pointer;
 }
 @media (max-width:1000px) {
+    .mid-container .slogan-cont{
+        width: 90%;
+    }
     .mid-container .converter-div{
         width: 90%;
     }
@@ -311,6 +320,9 @@ header span:hover i{
 }
 @media (max-width:700px) {
     .mid-container .converter-div{
+        width: 95%;
+    }
+    .mid-container .slogan-cont{
         width: 95%;
     }
     .mid-container .converter-div .inputs-container {
@@ -357,5 +369,15 @@ header span:hover i{
         justify-self: flex-start;
         margin-top: 10px;
         margin-bottom: 10px;
+    }
+}
+@media (max-width:468px) {
+    .mid-container .converter-div ul li{
+        font-size: 14px;
+        padding: inherit 3px inherit 3px;
+    }
+    .mid-container .converter-div ul li i{
+        font-size: 12px;
+        margin-right: 5px;
     }
 }
