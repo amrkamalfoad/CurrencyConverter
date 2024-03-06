@@ -230,9 +230,13 @@ header span:hover i{
     background-color: white;
     width: 70%;
     margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     border-radius: 7px;
     margin-top: 50px;
     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    padding: 0px 0px 20px 0px;
 }
 .mid-container .converter-div ul{
     list-style-type: none;
@@ -276,7 +280,7 @@ header span:hover i{
     column-gap: 40px;
     padding: 40px 25px 40px 25px;
 }
-.mid-container .converter-div .inputs-container input {
+.mid-container .converter-div .inputs-container input,select {
     border: 1px solid rgb(155, 155, 155);
     outline: none;
     border-radius: 5px;
@@ -361,7 +365,7 @@ header span:hover i{
     .mid-container .converter-div .inputs-container {
         column-gap: 5px;
     }
-    .mid-container .converter-div .inputs-container input {
+    .mid-container .converter-div .inputs-container input,select {
         padding: 10px;
     }
     .mid-container .converter-div .inputs-container .change{
@@ -380,4 +384,37 @@ header span:hover i{
         font-size: 12px;
         margin-right: 5px;
     }
+}
+.mid-container .inputs-container input{
+    text-indent: 10px;
+    
+}
+.mid-container .inputs-container select{
+    color: grey;
+    font-weight: bold;
+    position: relative;
+    padding: 5px;
+}   
+.mid-container .inputs-container select option{
+    color: grey; 
+}
+
+.mid-container .converter-div button{
+    padding: 10px 20px;
+    align-self: flex-end;
+    margin-right: 20px;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    color: #3378e7;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.mid-container .converter-div button:hover{
+    cursor: pointer;
+    background-color:#3378e7;
+    color: white;
+}
+.mid-container .converter-div .results{
+    
 }
