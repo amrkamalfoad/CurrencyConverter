@@ -415,6 +415,18 @@ header span:hover i{
     background-color:#3378e7;
     color: white;
 }
-.mid-container .converter-div .results{
-    
+
+.mid-container .converter-div .first{
+    margin-left: 20px;
+    font-size: 17px;
+    color: grey;
+    font-weight: bold;
+}
+.mid-container .converter-div .second{
+    color: grey;
+    margin-left: 60px;
+    margin-top:20px;
+    font-size: 25px;
+    font-style: italic;
+    font-weight: bold;
 }

@@ -76,16 +76,88 @@ let switchbtn=document.getElementsByClassName('change')[0];
 switchbtn.addEventListener('click',()=>{
     [from.value,to.value]=[to.value,from.value];
 })
+// make a cutomizable alert
+
+window.alert = function() {
+    // Prevent interaction with elements behind the alert box
+    let overlay = document.createElement('div');
+    overlay.style.position = "fixed";
+    overlay.style.top = "0";
+    overlay.style.left = "0";
+    overlay.style.width = "100%";
+    overlay.style.height = "100%";
+    overlay.style.backgroundColor = "rgba(0, 0, 0, 0.3)";
+    overlay.style.zIndex = "1000"; // Ensure the overlay appears on top
+    document.body.appendChild(overlay);
+    
+    let div = document.createElement('div');
+    let p = document.createElement('p');
+    let h2 = document.createElement('h2');
+    let text = document.createTextNode('ALERT');
+    let test = document.createTextNode('Please Enter a valid number');
+    let btnclose = document.createElement('button');
+    let textinbtn = document.createTextNode('OK');
+    btnclose.style.border = "none";
+    btnclose.style.backgroundColor = "white";
+    btnclose.style.borderRadius = '5px';
+    btnclose.style.color = "blue";
+    btnclose.style.padding = "10px 20px 10px 20px";
+    btnclose.style.marginTop = "10px";
+    btnclose.style.zIndex = "999";
+    btnclose.appendChild(textinbtn);
+    h2.appendChild(text);
+    h2.style.marginBottom = "10px";
+    p.style.color = "white";
+    p.style.textAlign = "center";
+    p.appendChild(test);
+    div.style.display = "flex";
+    div.style.flexDirection = "column";
+    div.style.justifyContent = "center";
+    div.style.alignItems = "center";
+    div.style.boxShadow = "rgba(125, 126, 126, 0.2) 0px 8px 24px";
+    div.appendChild(h2);
+    div.appendChild(p);
+    div.appendChild(btnclose);
+    div.style.position = "absolute";
+    div.style.top = "50%";
+    div.style.left = "50%";
+    div.style.transform = "translate(-50%,-50%)";
+    div.style.padding = "30px";
+    div.style.backgroundColor = "#3d6cb9";
+    div.style.borderRadius = "5px";
+    div.style.zIndex="1001"
+    document.body.appendChild(div);
+
+    // Add event listener to change cursor style when hovering over the close button
+    btnclose.addEventListener('mouseover', () => {
+        btnclose.style.cursor = 'pointer';
+    });
+
+    btnclose.addEventListener('click', () => {
+        document.body.removeChild(div);
+        document.body.removeChild(overlay); // Remove the overlay
+    });
+}
+
 
 
 //Math operation Using Rates in Returned from resloving promise (API Currency rates)
 let amount=document.querySelector('.mid-container .inputs-container input');
 let convertbtn=document.querySelector('.mid-container .converter-div button');
+let firstdiv=document.getElementsByClassName('first')[0];
+let seconddiv=document.getElementsByClassName('second')[0];
 convertbtn.addEventListener('click',()=>{
-    apirates.then((res)=>{
-       beforeamount=amount.value/res.rates[from.value];
-       console.log(beforeamount);
-       afteramount=beforeamount*res.rates[to.value];
-       console.log(afteramount)
+    if(amount.value<0 || amount.value==0 || amount.value=="$"){
+        alert('Please enter a valid number')
+    }else{
+        apirates.then((res)=>{
+        beforeamount=amount.value/res.rates[from.value];
+        console.log(beforeamount);
+        afteramount=beforeamount*res.rates[to.value];
+        console.log(afteramount)
+        firstdiv.innerHTML=` ${amount.value} ${from.value} = `;
+        seconddiv.innerHTML=`  ${afteramount.toFixed(6)} ${to.value} `
     })
+    }
 });
+
