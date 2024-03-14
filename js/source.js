@@ -144,6 +144,7 @@ window.alert = function() {
 //Math operation Using Rates in Returned from resloving promise (API Currency rates)
 let amount=document.querySelector('.mid-container .inputs-container input');
 let convertbtn=document.querySelector('.mid-container .converter-div button');
+let clearbtn=document.querySelectorAll('.mid-container .converter-div button')[1];
 let firstdiv=document.getElementsByClassName('first')[0];
 let seconddiv=document.getElementsByClassName('second')[0];
 convertbtn.addEventListener('click',()=>{
@@ -160,4 +161,9 @@ convertbtn.addEventListener('click',()=>{
     })
     }
 });
+clearbtn.addEventListener('click',()=>{
+    firstdiv.innerHTML=``;
+    seconddiv.innerHTML=``;
+    amount.value='$'
+})
 

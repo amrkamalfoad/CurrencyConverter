@@ -398,11 +398,16 @@ header span:hover i{
 .mid-container .inputs-container select option{
     color: grey; 
 }
-
-.mid-container .converter-div button{
-    padding: 10px 20px;
-    align-self: flex-end;
+.mid-container .converter-div>div.buttons{
+    /* background-color: red; */
+    display: flex;
+    margin-left: auto;
+    gap: 20px;
+    margin-top: 20px;
     margin-right: 20px;
+}
+.mid-container .converter-div>div button{
+    padding: 10px 20px;
     outline: none;
     border: none;
     border-radius: 4px;
@@ -410,7 +415,7 @@ header span:hover i{
     font-weight: bold;
     transition: 0.3s;
 }
-.mid-container .converter-div button:hover{
+.mid-container .converter-div>div button:hover{
     cursor: pointer;
     background-color:#3378e7;
     color: white;
