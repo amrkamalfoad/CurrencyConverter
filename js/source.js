@@ -10,6 +10,7 @@ signinbutton.forEach((el)=>{
 //dropdown list buttons
 let drop=document.querySelectorAll('header span');
 let header=document.querySelector('header');
+let allexceptheaderandlist=document.querySelectorAll('body>:not(header,.list)') //to make all elements disappear when click on barbutton
 let list=document.querySelector('.list');
 
 drop.forEach((el)=>{
@@ -20,6 +21,9 @@ drop.forEach((el)=>{
     })
 })
 drop[0].addEventListener('click',()=>{
+    allexceptheaderandlist.forEach((el)=>{
+        el.style.display='none';
+    })
     header.style.height="12vh";
     list.style.display="block";
     list.style.height="88vh"
@@ -27,10 +31,17 @@ drop[0].addEventListener('click',()=>{
 })
 drop[1].addEventListener('click',()=>{
     list.style.display="none";
+    allexceptheaderandlist.forEach((el)=>{
+        el.style.display='block';
+    })
+    document.body.style.overflow="auto";
 })
 window.addEventListener('resize',function(){
     if (window.matchMedia("(min-width: 1000px)").matches) {
         list.style.display="none";
+        allexceptheaderandlist.forEach((el)=>{
+            el.style.display='block';
+        })
         drop.forEach((e)=>{
             e.classList.remove('appear');
         })
@@ -118,7 +129,7 @@ window.alert = function() {
     div.appendChild(h2);
     div.appendChild(p);
     div.appendChild(btnclose);
-    div.style.position = "absolute";
+    div.style.position = "fixed";
     div.style.top = "50%";
     div.style.left = "50%";
     div.style.transform = "translate(-50%,-50%)";
@@ -140,6 +151,27 @@ window.alert = function() {
 }
 
 
+//make buttons list buttons in dropdown and navbar
+//first in navbar
+let btnlist=document.querySelectorAll('header ul li');
+btnlist.forEach((el)=>{
+    el.addEventListener('click',()=>{
+        btnlist.forEach((e)=>{
+            e.classList.remove('active')
+        })
+        el.classList.add('active')
+    })
+})
+//second in list
+let droplistbtn=document.querySelectorAll('.list ul li');
+droplistbtn.forEach((el)=>{
+    el.addEventListener('click',()=>{
+        droplistbtn.forEach((e)=>{
+            e.classList.remove('active')
+        })
+        el.classList.add('active')
+    })
+})
 
 //Math operation Using Rates in Returned from resloving promise (API Currency rates)
 let amount=document.querySelector('.mid-container .inputs-container input');
@@ -166,4 +198,3 @@ clearbtn.addEventListener('click',()=>{
     seconddiv.innerHTML=``;
     amount.value='$'
 })
-
