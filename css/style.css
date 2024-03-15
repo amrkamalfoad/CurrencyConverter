@@ -510,7 +510,28 @@ header ul li.active,
 }   
 .slide-container .slide-content .card-wrapper .card .topcard span i{
     color: rgb(10, 20, 110);
+    position: relative;
+    animation: upanddown 1.4s linear infinite;
 }
+@keyframes upanddown {
+    0% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(-3px);
+    }
+    50% {
+        transform: translateY(0);
+    }
+    75% {
+        transform: translateY(3px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
 .slide-container .slide-content .card-wrapper .card .topcard h3{
     text-align: center;
     color: white;
@@ -624,6 +645,8 @@ header ul li.active,
     font-size: large;
     border-radius: 10px;
     transition: 0.4s;
+    width: fit-content;
+    font-size: 16px;
 }
 .apibtn button:hover{
     border: 1px solid #3378e7;
