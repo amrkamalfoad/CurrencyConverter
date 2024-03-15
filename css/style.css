@@ -16,7 +16,7 @@ header{
     font-size: 15px;
     position: sticky;
     top: 0;
-    z-index: 2;
+    z-index: 1000;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 header img{
@@ -442,4 +442,192 @@ header ul li.active,
     font-size: 25px;
     font-style: italic;
     font-weight: bold;
+}
+/* title of slider */
+.slider-title{
+    color: rgb(10, 20, 110);
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    text-align: center;
+    padding: 20px;
+}
+/* slider style */
+.slide-container{
+    width: 90%;
+    margin:auto;
+    padding: 60px;
+    /* background-color: gray; */
+}
+.slide-container .slide-content .card-wrapper{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(270px,1fr));
+    gap: 30px;
+}
+.slide-container .slide-content .card-wrapper .card{
+    display: flex;
+    flex-direction: column;
+    background-color: #3378e7;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.slide-container .slide-content .card-wrapper .card .topcard{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    height: 50%;
+    position: relative;
+}
+.slide-container .slide-content .card-wrapper .card .topcard::before{
+    position: absolute;
+    content: "";
+    bottom: 0px;
+    left: 0;
+    border: 30px solid;
+    border-color: #3378e7 ;
+    border-radius: 50% 50% 50% 50%;
+    z-index: 100;
+}
+.slide-container .slide-content .card-wrapper .card .topcard::after{
+    position: absolute;
+    content: "";
+    bottom: 0px;
+    left: 0;
+    border: 15px solid;
+    border-color: white ;
+    z-index: 50;
+}
+.slide-container .slide-content .card-wrapper .card .topcard span{
+    background-color: #fff;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 6px solid #3378e7;
+}   
+.slide-container .slide-content .card-wrapper .card .topcard span i{
+    color: rgb(10, 20, 110);
+}
+.slide-container .slide-content .card-wrapper .card .topcard h3{
+    text-align: center;
+    color: white;
+    margin-top: 15px;
+    z-index: 200;
+}
+.slide-container .slide-content .card-wrapper .card .bottomcard {
+    padding: 30px 15px;
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+    position: relative;
+    background-color: white;
+    border-radius: 0px 25px 25px 25px ;
+}  
+.slide-container .slide-content .card-wrapper .card .bottomcard p{
+    color: #3378e7;
+    line-height: 1.5;
+    margin-bottom: 35px;
+    font-size: 15px;
+}  
+.slide-container .slide-content .card-wrapper .card .bottomcard button{
+    outline: none;
+    border: none;
+    justify-self: center;
+    padding: 10px 15px;
+    align-self: center;
+    border-radius: 9px;
+    position: absolute;
+    bottom: 15px;  
+    background-color: white;
+    border: 1px solid #3378e7;
+    color: #3378e7;
+    transition: 0.3s;
+}  
+.slide-container .slide-content .card-wrapper .card .bottomcard button:hover{
+    background-color: #3378e7;
+    color: white;
+    cursor: pointer;
+    
+}  
+/* large screens */
+@media (min-width:1600px) {
+    .slide-container .slide-content .card-wrapper{
+        gap: 60px;
+    }
+    .slide-container{
+        width: 80%;
+    }
+}
+/* small screens */
+@media (max-width:468px) {
+    .slide-container{
+        width: 100%;
+        margin:auto;
+        padding: 30px;
+    }
+    .slide-container .slide-content .card-wrapper{
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(270px,1fr));
+        gap: 20px;
+    }
+}
+/* cards */
+.cards-title{
+    color: rgb(10, 20, 110);
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.cards-title p{
+    color: rgb(10, 20, 110);
+    margin-top: 20px;
+}
+.swiper{
+    width: 240px;
+    height: 320px;
+    margin-top: 50px;
+}
+.swiper-slide{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+    padding: 20px;
+    color: rgb(10, 20, 110);
+}
+.swiper-slide {
+    background-color: #f5f5f5 ;
+}
+.apibtn{
+    height: fit-content;
+    padding: 50px 30px;
+    position: relative;
+}
+.apibtn button{
+    border: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #3378e7;
+    color: white;
+    padding: 15px 20px;
+    font-size: large;
+    border-radius: 10px;
+    transition: 0.4s;
+}
+.apibtn button:hover{
+    border: 1px solid #3378e7;
+    color: rgb(10, 20, 110);
+    background-color: transparent;
+    cursor: pointer;
 }
