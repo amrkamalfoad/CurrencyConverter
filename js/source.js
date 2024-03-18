@@ -198,3 +198,5 @@ clearbtn.addEventListener('click',()=>{
     seconddiv.innerHTML=``;
     amount.value='$'
 })
+// init Aimate on scroll library
+AOS.init();
