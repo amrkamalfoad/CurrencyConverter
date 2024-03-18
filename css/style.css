@@ -6,6 +6,7 @@
     scroll-behavior: smooth;
 }
 
+
 header{
     display: flex;
     background-color: #fafafa;
@@ -130,6 +131,7 @@ header span:hover i{
         display: none;
     }
 }
+
 /* end of navigation bar */
 /* drop list */
 .list{
@@ -220,7 +222,10 @@ header ul li.active,
     left: 0;
     width: 100%;
     height: 70%;
-    background-image: url('../imgs/back.jpg');
+    /* background-image: url('../imgs/back2.jpg'); */
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 40%, rgba(0,212,255,1) 100%);
+    filter: blur(1px);
     background-position: center;
     background-size: cover;
     z-index: -1;
@@ -392,6 +397,14 @@ header ul li.active,
     .mid-container .converter-div ul li i{
         font-size: 12px;
         margin-right: 5px;
+    }
+}
+@media (min-width:1600px) {
+    .mid-container .slogan-cont{
+        width: 60%;
+    }
+    .mid-container .converter-div{
+        width: 60%;
     }
 }
 .mid-container .inputs-container input{
@@ -610,6 +623,13 @@ header ul li.active,
     color: rgb(10, 20, 110);
     margin-top: 20px;
 }
+.containerOfSwiper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
 .swiper{
     width: 240px;
     height: 320px;
@@ -655,3 +675,4 @@ header ul li.active,
     background-color: transparent;
     cursor: pointer;
 }
+
