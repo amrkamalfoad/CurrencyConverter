@@ -647,12 +647,12 @@ header ul li.active,
     align-items: center;
     overflow: hidden;
 }
-.swiper{
+.containerOfSwiper .swiper{
     width: 240px;
     height: 320px;
     margin-top: 50px;
 }
-.swiper-slide{
+.containerOfSwiper .swiper-slide{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -663,7 +663,7 @@ header ul li.active,
     padding: 20px;
     color: rgb(10, 20, 110);
 }
-.swiper-slide {
+.containerOfSwiper .swiper-slide {
     background-color: #f5f5f5 ;
 }
 .apibtn{
@@ -693,3 +693,91 @@ header ul li.active,
     cursor: pointer;
 }
 
+/* swiper 2 ratings */
+
+.ratings-container{
+    background-color: #eee;
+    margin-top: 50px;
+}
+.ratings-container .swiper{
+    width: 70%;
+}
+.ratings-container .swiper-slide{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+    gap: 40px;
+    padding: 30px;
+    width: 100%;
+    /* background-color: red; */
+}
+.ratings-container .swiper .swiper-wrapper>div .container-rate{
+    padding: 25px;
+    background-color: white;
+    border-radius: 4px;
+}
+.ratings-container .swiper .swiper-wrapper>div .container-rate ul{
+    display: flex;
+    gap: 3px;
+    list-style-type: none;
+}
+.ratings-container .swiper .swiper-wrapper>div .container-rate ul li{
+    padding: 5px;
+    background-color: rgb(4, 194, 4);
+    transition: 0.3s;
+}
+.ratings-container .swiper .swiper-wrapper>div .container-rate:nth-of-type(1) ul li:nth-of-type(4){
+    background-color: silver;
+}
+.ratings-container .swiper .swiper-wrapper>div .container-rate:nth-child(1) ul li:nth-of-type(5){
+    background-color: silver
+}
+.ratings-container .swiper .swiper-wrapper>div .container-rate:nth-of-type(3) ul li:nth-of-type(3){
+    background-color: silver;
+}
+.ratings-container .swiper .swiper-wrapper>div .container-rate:nth-of-type(3) ul li:nth-of-type(4){
+    background-color: silver;
+}
+.ratings-container .swiper .swiper-wrapper>div .container-rate:nth-child(3) ul li:nth-of-type(5){
+    background-color: silver
+}
+.ratings-container .swiper .swiper-wrapper>div .container-rate ul li i{
+    color:snow;
+    animation: spin 3s ease-in-out infinite;
+}
+.ratings-container .swiper .swiper-wrapper>div .container-rate h3{
+    color: gray;
+    margin-top: 15px;
+    font-size: larger;
+}
+.ratings-container .swiper .swiper-wrapper>div .container-rate p{
+    margin-top: 10px;
+    color: grey;
+    font-size: 14px;
+    width: 100%;
+    height: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    
+}
+.ratings-container .swiper .swiper-wrapper>div .container-rate span:nth-of-type(1){
+    display: block;
+    margin-top: 30px;
+    font-weight: bold;
+}
+.ratings-container .swiper .swiper-wrapper>div .container-rate span:nth-of-type(2){
+    color: rgb(4, 194, 4);
+    font-size: 13px;
+    margin-top: 5px;
+}
+.ratings-container .cards-title{
+    padding: 30px 20px;
+    /* background-color: red; */
+}
+@keyframes spin{
+    from{
+        transform: rotate3d(0,0,1,0);
+    }
+    to{
+        transform: rotate3d(0,0,1,360deg);
+    }
+}
